@@ -44,7 +44,7 @@ cd text2threejs/frontend
 python -m http.server 8000
 ```
 
-Three.js r170 is vendored under `text2threejs/frontend/vendor/`, so the demo runs fully offline —
+Three.js r170 is vendored under `ScenePulse/frontend/vendor/`, so the demo runs fully offline —
 no CDN or network access required.
 
 Then: pick or type a prompt → **Generate** → select objects, drag gizmos, press **Play**, scrub the
