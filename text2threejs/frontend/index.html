@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text → Three.js — Creative Tool Viewport</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Three.js is vendored locally (r170) so the app runs fully offline —
+       no CDN availability or network policy can break the page. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three.module.js",
+        "three/addons/": "./vendor/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <!-- ================= Header: brand + prompt bar ================= -->
+    <header class="header">
+      <div class="brand">
+        <span class="title">Text → Three.js</span>
+        <span class="subtitle">prompt · spec · scene · timeline</span>
+      </div>
+      <div class="prompt-bar">
+        <input
+          id="promptInput"
+          class="prompt-input"
+          type="text"
+          placeholder='Describe a scene… e.g. "Create a cinematic futuristic watch product reveal."'
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="generateBtn" class="btn primary">Generate</button>
+        <button id="editBtn" class="btn" disabled title="Patch the current scene with this instruction">Apply Edit</button>
+      </div>
+    </header>
+
+    <!-- ================= Left panel: demo prompts + shortcuts ================= -->
+    <aside class="left-panel">
+      <div class="panel-title">Demo Prompts</div>
+      <div id="demoList"></div>
+      <div class="shortcuts">
+        <div class="panel-title">Shortcuts</div>
+        <div><kbd>Space</kbd> play / pause</div>
+        <div><kbd>W</kbd>/<kbd>E</kbd>/<kbd>R</kbd> move / rotate / scale</div>
+        <div><kbd>F</kbd> frame selected</div>
+        <div><kbd>Home</kbd> reset camera</div>
+        <div><kbd>Esc</kbd> deselect</div>
+      </div>
+    </aside>
+
+    <!-- ================= Viewport ================= -->
+    <main class="viewport-wrap">
+      <div id="viewport"></div>
+      <div id="viewportHint" class="viewport-hint">Click an object to select · Drag to orbit · Scroll to zoom</div>
+      <div class="gizmo-toolbar">
+        <button id="toolTranslate" class="tool-btn active" title="Move (W)">✥</button>
+        <button id="toolRotate" class="tool-btn" title="Rotate (E)">⟳</button>
+        <button id="toolScale" class="tool-btn" title="Scale (R)">⤢</button>
+        <button id="toolFrame" class="tool-btn" title="Frame selected (F)">⛶</button>
+        <button id="toolResetCam" class="tool-btn" title="Reset camera (Home)">⌂</button>
+      </div>
+    </main>
+
+    <!-- ================= Right panel: hierarchy + inspector ================= -->
+    <aside class="right-panel">
+      <div class="hierarchy">
+        <div class="panel-title">Scene Hierarchy</div>
+        <div id="treeRoot"><div class="inspector-empty">Generate a scene to inspect its hierarchy.</div></div>
+      </div>
+      <div class="inspector">
+        <div class="panel-title">Inspector</div>
+        <div id="inspectorBody"><div class="inspector-empty">Nothing selected.</div></div>
+      </div>
+    </aside>
+
+    <!-- ================= Timeline ================= -->
+    <section class="timeline">
+      <div class="timeline-controls">
+        <button id="playBtn" class="play-btn" title="Play / pause (Space)">▶</button>
+        <span class="time-display">t = <b id="timeCurrent">0.00</b>s / <b id="timeDuration">0.00</b>s</span>
+        <label style="font-size:11px;color:var(--text-dim);display:flex;align-items:center;gap:6px;">
+          speed
+          <select id="speedSelect" style="background:var(--panel-2);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:3px 6px;font-size:11px;">
+            <option value="0.25">0.25×</option>
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+          </select>
+        </label>
+        <span id="clipCount" style="font-size:11px;color:var(--text-dim);margin-left:auto;"></span>
+      </div>
+      <div class="timeline-canvas-wrap">
+        <canvas id="timelineCanvas"></canvas>
+      </div>
+    </section>
+
+    <!-- ================= Status bar ================= -->
+    <footer class="status-bar">
+      <span class="stat">FPS<b id="statFps">–</b></span>
+      <span class="stat">frame<b id="statFrameTime">–</b></span>
+      <span class="stat">draw calls<b id="statDrawCalls">–</b></span>
+      <span class="stat">tris<b id="statTriangles">–</b></span>
+      <span class="stat">objects<b id="statObjects">–</b></span>
+      <span class="status-right" id="providerLabel">provider: mock (no API key)</span>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <div id="fatalError" class="fatal-error" style="display:none;"></div>
+
+  <!-- Inline error surface: runs even if module/CDN loading fails, so a
+       broken setup never presents as a silent dead page. -->
+  <script>
+    (function () {
+      function show(msg) {
+        var el = document.getElementById('fatalError');
+        if (!el) return;
+        el.textContent = msg;
+        el.style.display = 'block';
+      }
+      window.addEventListener('error', function (e) {
+        show('⚠ ' + (e.message || 'Script error') + (e.filename ? '  (' + e.filename.split('/').pop() + ')' : ''));
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        var reason = e.reason;
+        show('⚠ ' + ((reason && reason.message) || String(reason)));
+      });
+    })();
+  </script>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

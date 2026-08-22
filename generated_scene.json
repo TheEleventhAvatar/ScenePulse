@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "1.0",
+  "scene": {
+    "name": "Neon Cyberpunk City Street",
+    "description": "A vibrant and glowing neon city street at night with rain effects, floating holographic signs, and a drone slowly rotating above.",
+    "background": "#000000",
+    "fog": {
+      "type": "fog-exp2",
+      "color": "#1A1A1A",
+      "density": 0.05
+    }
+  },
+  "environment": {
+    "background": "#000000",
+    "toneMapping": "aces",
+    "toneMappingExposure": 1.0,
+    "shadowMapEnabled": true,
+    "shadowMapType": "pcf-soft"
+  },
+  "camera": {
+    "type": "perspective",
+    "fov": 75,
+    "near": 0.1,
+    "far": 1000,
+    "position": [
+      0,
+      5,
+      10
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "objects": [
+    {
+      "id": "ground",
+      "type": "plane",
+      "position": [
+        0,
+        -0.1,
+        0
+      ],
+      "rotation": [
+        -1.5708,
+        0,
+        0
+      ],
+      "dimensions": {
+        "width": 20,
+        "height": 1,
+        "depth": 20
+      },
+      "material": "groundMaterial",
+      "visible": true,
+      "receiveShadow": true
+    },
+    {
+      "id": "drone",
+      "type": "cylinder",
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.2,
+        0.5
+      ],
+      "material": "droneMaterial",
+      "visible": true,
+      "castShadow": true
+    },
+    {
+      "id": "hologram1",
+      "type": "plane",
+      "position": [
+        3,
+        2,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": {
+        "width": 2,
+        "height": 2,
+        "depth": 0.01
+      },
+      "material": "hologramMaterial",
+      "visible": true
+    },
+    {
+      "id": "hologram2",
+      "type": "plane",
+      "position": [
+        -4,
+        2,
+        -5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "dimensions": {
+        "width": 2,
+        "height": 2,
+        "depth": 0.01
+      },
+      "material": "hologramMaterial",
+      "visible": true
+    }
+  ],
+  "materials": [
+    {
+      "id": "groundMaterial",
+      "color": "#333333",
+      "roughness": 0.5,
+      "metalness": 0.3,
+      "transparent": false
+    },
+    {
+      "id": "droneMaterial",
+      "color": "#FF00FF",
+      "roughness": 0.1,
+      "metalness": 0.8,
+      "emissive": "#FF00FF",
+      "emissiveIntensity": 0.5,
+      "transparent": false
+    },
+    {
+      "id": "hologramMaterial",
+      "color": "#00FFFF",
+      "roughness": 0.2,
+      "metalness": 0.5,
+      "transparent": true,
+      "opacity": 0.8
+    }
+  ],
+  "lights": [
+    {
+      "id": "ambientLight",
+      "type": "ambient",
+      "color": "#FFFFFF",
+      "intensity": 0.2
+    },
+    {
+      "id": "pointLight",
+      "type": "point",
+      "color": "#FFFFFF",
+      "intensity": 1.5,
+      "position": [
+        0,
+        5,
+        0
+      ],
+      "distance": 10,
+      "decay": 2,
+      "castShadow": true
+    }
+  ],
+  "animations": [
+    {
+      "id": "droneRotation",
+      "object": "drone",
+      "property": "rotation.y",
+      "from": 0,
+      "to": 6.28319,
+      "duration": 5,
+      "easing": "linear",
+      "loop": true
+    }
+  ]
+}

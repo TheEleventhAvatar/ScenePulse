@@ -1,0 +1,2151 @@
+{
+  "cinematic-product-reveal": {
+    "prompt": "Create a cinematic product reveal for a futuristic watch. Put the watch on a dark reflective pedestal, use dramatic rim lighting, slowly rotate the watch, and move the camera toward it.",
+    "provider": "mock",
+    "spec": {
+      "schemaVersion": "1.0",
+      "scene": {
+        "name": "Cinematic Product Reveal",
+        "description": "A futuristic watch on a dark reflective pedestal with dramatic rim lighting.",
+        "background": "#050508",
+        "fog": null,
+        "environment": null,
+        "units": "meters",
+        "up": "y"
+      },
+      "objects": [
+        {
+          "id": "pedestal",
+          "name": "pedestal",
+          "type": "cylinder",
+          "parent": null,
+          "position": [
+            0,
+            0.15,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 1.2,
+            "height": 0.3
+          },
+          "material": "mat_pedestal",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "pedestal_top",
+          "name": "pedestal_top",
+          "type": "cylinder",
+          "parent": null,
+          "position": [
+            0,
+            0.3,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.8,
+            "height": 0.05
+          },
+          "material": "mat_pedestal_top",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "watch_body",
+          "name": "watch_body",
+          "type": "cylinder",
+          "parent": "pedestal_top",
+          "position": [
+            0,
+            0.15,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.35,
+            "height": 0.08
+          },
+          "material": "mat_watch_body",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "watch_face",
+          "name": "watch_face",
+          "type": "cylinder",
+          "parent": "watch_body",
+          "position": [
+            0,
+            0.05,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.3,
+            "height": 0.01
+          },
+          "material": "mat_watch_face",
+          "visible": true,
+          "castShadow": false,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "watch_crown",
+          "name": "watch_crown",
+          "type": "cylinder",
+          "parent": "watch_body",
+          "position": [
+            0.35,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            1.5708
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.06,
+            "height": 0.1
+          },
+          "material": "mat_watch_body",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "watch_band",
+          "name": "watch_band",
+          "type": "box",
+          "parent": "watch_body",
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 0.2,
+            "height": 0.2,
+            "depth": 0.5
+          },
+          "material": "mat_band",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat_pedestal",
+          "shaderModel": "physical",
+          "color": "#1a1a24",
+          "roughness": 0.15,
+          "metalness": 0.9,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.1,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 1.5
+        },
+        {
+          "id": "mat_pedestal_top",
+          "shaderModel": "physical",
+          "color": "#222233",
+          "roughness": 0.1,
+          "metalness": 0.95,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 1.8
+        },
+        {
+          "id": "mat_watch_body",
+          "shaderModel": "physical",
+          "color": "#2a2a35",
+          "roughness": 0.2,
+          "metalness": 0.85,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.8,
+          "clearcoatRoughness": 0.15,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 1.2
+        },
+        {
+          "id": "mat_watch_face",
+          "shaderModel": "physical",
+          "color": "#0a0a12",
+          "roughness": 0.05,
+          "metalness": 0.3,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#1a2a4a",
+          "emissiveIntensity": 0.3,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 1.5
+        },
+        {
+          "id": "mat_band",
+          "shaderModel": "physical",
+          "color": "#1a1a22",
+          "roughness": 0.4,
+          "metalness": 0.6,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        }
+      ],
+      "textures": [],
+      "lights": [
+        {
+          "id": "key_light",
+          "type": "directional",
+          "color": "#fff4e0",
+          "intensity": 2.5,
+          "position": [
+            4,
+            6,
+            3
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 2048,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "rim_light",
+          "type": "directional",
+          "color": "#4a8aff",
+          "intensity": 3.0,
+          "position": [
+            -3,
+            4,
+            -5
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": false,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "fill_light",
+          "type": "directional",
+          "color": "#8899bb",
+          "intensity": 0.5,
+          "position": [
+            -2,
+            2,
+            4
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": false,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "ambient_glow",
+          "type": "ambient",
+          "color": "#223344",
+          "intensity": 0.3,
+          "position": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        }
+      ],
+      "camera": {
+        "type": "perspective",
+        "fov": 45,
+        "near": 0.1,
+        "far": 50,
+        "position": [
+          0,
+          2.5,
+          10
+        ],
+        "target": [
+          0,
+          1.2,
+          0
+        ],
+        "orthoSize": 5.0,
+        "orthoLeft": -5.0,
+        "orthoRight": 5.0,
+        "orthoTop": 5.0,
+        "orthoBottom": -5.0
+      },
+      "environment": {
+        "background": "#050508",
+        "fog": {
+          "type": "fog",
+          "color": "#050508",
+          "near": 8,
+          "far": 25
+        },
+        "toneMapping": "aces",
+        "toneMappingExposure": 1.2,
+        "shadowMapEnabled": true,
+        "shadowMapType": "pcf-soft"
+      },
+      "animations": [
+        {
+          "id": "watch_rotate",
+          "object": "watch_body",
+          "property": "rotation.y",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 8.0,
+          "easing": "easeInOutCubic",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        }
+      ],
+      "interactions": [
+        {
+          "object": "watch_body",
+          "type": "click"
+        },
+        {
+          "object": "pedestal",
+          "type": "hover"
+        }
+      ],
+      "constraints": [],
+      "effects": [
+        {
+          "type": "bloom",
+          "strength": 0.6
+        },
+        {
+          "type": "vignette"
+        }
+      ],
+      "metadata": {
+        "sourcePrompt": "",
+        "generatedBy": "text2threejs",
+        "generatedAt": "",
+        "notes": []
+      }
+    }
+  },
+  "neon-cyberpunk": {
+    "prompt": "Create a neon cyberpunk city scene at night. Include glowing buildings, a neon sign, fog, and a flying drone.",
+    "provider": "mock",
+    "spec": {
+      "schemaVersion": "1.0",
+      "scene": {
+        "name": "Neon Cyberpunk City",
+        "description": "A neon cyberpunk city at night with glowing buildings and fog.",
+        "background": "#050510",
+        "fog": null,
+        "environment": null,
+        "units": "meters",
+        "up": "y"
+      },
+      "objects": [
+        {
+          "id": "ground",
+          "name": "ground",
+          "type": "plane",
+          "parent": null,
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 20,
+            "height": 20
+          },
+          "material": "mat_ground",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "building_1",
+          "name": "building_1",
+          "type": "box",
+          "parent": null,
+          "position": [
+            -3,
+            2,
+            -2
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 2,
+            "height": 4,
+            "depth": 2
+          },
+          "material": "mat_building",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "building_2",
+          "name": "building_2",
+          "type": "box",
+          "parent": null,
+          "position": [
+            2,
+            3,
+            -4
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 2,
+            "height": 6,
+            "depth": 2
+          },
+          "material": "mat_building",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "building_3",
+          "name": "building_3",
+          "type": "box",
+          "parent": null,
+          "position": [
+            -1,
+            1.5,
+            -6
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 3,
+            "height": 3,
+            "depth": 2
+          },
+          "material": "mat_building",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "building_4",
+          "name": "building_4",
+          "type": "box",
+          "parent": null,
+          "position": [
+            4,
+            2.5,
+            -1
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 1.5,
+            "height": 5,
+            "depth": 1.5
+          },
+          "material": "mat_building",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "neon_sign",
+          "name": "neon_sign",
+          "type": "box",
+          "parent": null,
+          "position": [
+            -3,
+            4.5,
+            -1.5
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 1.5,
+            "height": 0.3,
+            "depth": 0.1
+          },
+          "material": "mat_neon",
+          "visible": true,
+          "castShadow": false,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "drone",
+          "name": "drone",
+          "type": "sphere",
+          "parent": null,
+          "position": [
+            0,
+            5,
+            2
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.2
+          },
+          "material": "mat_drone",
+          "visible": true,
+          "castShadow": false,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat_ground",
+          "shaderModel": "physical",
+          "color": "#0a0a18",
+          "roughness": 0.8,
+          "metalness": 0.1,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_building",
+          "shaderModel": "physical",
+          "color": "#111122",
+          "roughness": 0.6,
+          "metalness": 0.3,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#0a0a22",
+          "emissiveIntensity": 0.2,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_neon",
+          "shaderModel": "physical",
+          "color": "#ff00ff",
+          "roughness": 0.2,
+          "metalness": 0.1,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#ff00ff",
+          "emissiveIntensity": 3.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_drone",
+          "shaderModel": "physical",
+          "color": "#00ffaa",
+          "roughness": 0.3,
+          "metalness": 0.5,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#00ffaa",
+          "emissiveIntensity": 1.5,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        }
+      ],
+      "textures": [],
+      "lights": [
+        {
+          "id": "moon",
+          "type": "directional",
+          "color": "#4466aa",
+          "intensity": 0.5,
+          "position": [
+            5,
+            10,
+            5
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "neon_glow",
+          "type": "point",
+          "color": "#ff00ff",
+          "intensity": 2.0,
+          "position": [
+            -3,
+            4.5,
+            -1.5
+          ],
+          "target": null,
+          "distance": 8,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "cyan_glow",
+          "type": "point",
+          "color": "#00ffff",
+          "intensity": 1.5,
+          "position": [
+            2,
+            3,
+            -4
+          ],
+          "target": null,
+          "distance": 6,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        }
+      ],
+      "camera": {
+        "type": "perspective",
+        "fov": 60,
+        "near": 0.1,
+        "far": 1000.0,
+        "position": [
+          0,
+          3,
+          12
+        ],
+        "target": [
+          0,
+          2,
+          0
+        ],
+        "orthoSize": 5.0,
+        "orthoLeft": -5.0,
+        "orthoRight": 5.0,
+        "orthoTop": 5.0,
+        "orthoBottom": -5.0
+      },
+      "environment": {
+        "background": "#050510",
+        "fog": {
+          "type": "fog-exp2",
+          "color": "#050510",
+          "density": 0.04
+        },
+        "toneMapping": "aces",
+        "toneMappingExposure": 1.1,
+        "shadowMapEnabled": true,
+        "shadowMapType": "pcf-soft"
+      },
+      "animations": [
+        {
+          "id": "drone_fly",
+          "object": "drone",
+          "property": "position",
+          "from": [
+            0,
+            5,
+            2
+          ],
+          "to": [
+            3,
+            6,
+            -2
+          ],
+          "duration": 4.0,
+          "easing": "easeInOutSine",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": true
+        },
+        {
+          "id": "neon_pulse",
+          "object": "neon_sign",
+          "property": "material.emissiveIntensity",
+          "from": 2.0,
+          "to": 4.0,
+          "duration": 1.5,
+          "easing": "easeInOutSine",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": true
+        }
+      ],
+      "interactions": [],
+      "constraints": [],
+      "effects": [
+        {
+          "type": "bloom",
+          "strength": 1.2
+        },
+        {
+          "type": "chromatic-aberration"
+        }
+      ],
+      "metadata": {
+        "sourcePrompt": "",
+        "generatedBy": "text2threejs",
+        "generatedAt": "",
+        "notes": []
+      }
+    }
+  },
+  "abstract-motion": {
+    "prompt": "Create an abstract motion-graphics scene with floating geometric shapes, a gradient background, and smooth looping animations.",
+    "provider": "mock",
+    "spec": {
+      "schemaVersion": "1.0",
+      "scene": {
+        "name": "Abstract Motion",
+        "description": "Floating geometric shapes with smooth looping animations.",
+        "background": "#0a0a1a",
+        "fog": null,
+        "environment": null,
+        "units": "meters",
+        "up": "y"
+      },
+      "objects": [
+        {
+          "id": "sphere_1",
+          "name": "sphere_1",
+          "type": "sphere",
+          "parent": null,
+          "position": [
+            -2,
+            1,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.6
+          },
+          "material": "mat_gradient",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "torus_1",
+          "name": "torus_1",
+          "type": "torus",
+          "parent": null,
+          "position": [
+            2,
+            0.5,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.5
+          },
+          "material": "mat_glow",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "box_1",
+          "name": "box_1",
+          "type": "box",
+          "parent": null,
+          "position": [
+            0,
+            -1,
+            -1
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 0.8,
+            "height": 0.8,
+            "depth": 0.8
+          },
+          "material": "mat_wire",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "cone_1",
+          "name": "cone_1",
+          "type": "cone",
+          "parent": null,
+          "position": [
+            -1,
+            -0.5,
+            2
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.4,
+            "height": 0.8
+          },
+          "material": "mat_gradient",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "ring_1",
+          "name": "ring_1",
+          "type": "ring",
+          "parent": null,
+          "position": [
+            1,
+            1.5,
+            -1
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.4
+          },
+          "material": "mat_glow",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat_gradient",
+          "shaderModel": "physical",
+          "color": "#ff6b6b",
+          "roughness": 0.3,
+          "metalness": 0.2,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#ff6b6b",
+          "emissiveIntensity": 0.5,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_glow",
+          "shaderModel": "physical",
+          "color": "#4ecdc4",
+          "roughness": 0.2,
+          "metalness": 0.1,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#4ecdc4",
+          "emissiveIntensity": 1.5,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_wire",
+          "shaderModel": "physical",
+          "color": "#ffe66d",
+          "roughness": 0.4,
+          "metalness": 0.3,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#ffe66d",
+          "emissiveIntensity": 0.8,
+          "doubleSided": false,
+          "wireframe": true,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        }
+      ],
+      "textures": [],
+      "lights": [
+        {
+          "id": "ambient",
+          "type": "ambient",
+          "color": "#ffffff",
+          "intensity": 0.4,
+          "position": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "key",
+          "type": "directional",
+          "color": "#ffffff",
+          "intensity": 1.5,
+          "position": [
+            3,
+            5,
+            4
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        }
+      ],
+      "camera": {
+        "type": "perspective",
+        "fov": 55,
+        "near": 0.1,
+        "far": 1000.0,
+        "position": [
+          0,
+          2,
+          10
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "orthoSize": 5.0,
+        "orthoLeft": -5.0,
+        "orthoRight": 5.0,
+        "orthoTop": 5.0,
+        "orthoBottom": -5.0
+      },
+      "environment": {
+        "background": "#0a0a1a",
+        "toneMapping": "aces",
+        "toneMappingExposure": 1.0,
+        "shadowMapEnabled": false
+      },
+      "animations": [
+        {
+          "id": "sphere_bounce",
+          "object": "sphere_1",
+          "property": "position.y",
+          "from": 1,
+          "to": 2.5,
+          "duration": 2.0,
+          "easing": "easeInOutBounce",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": true
+        },
+        {
+          "id": "torus_spin",
+          "object": "torus_1",
+          "property": "rotation.x",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 3.0,
+          "easing": "linear",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        },
+        {
+          "id": "box_float",
+          "object": "box_1",
+          "property": "position.y",
+          "from": -1,
+          "to": 0.5,
+          "duration": 2.5,
+          "easing": "easeInOutSine",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": true
+        },
+        {
+          "id": "cone_rotate",
+          "object": "cone_1",
+          "property": "rotation.y",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 4.0,
+          "easing": "linear",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        },
+        {
+          "id": "ring_pulse",
+          "object": "ring_1",
+          "property": "scale",
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            1.5,
+            1.5,
+            1.5
+          ],
+          "duration": 1.5,
+          "easing": "easeInOutQuad",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": true
+        }
+      ],
+      "interactions": [],
+      "constraints": [],
+      "effects": [
+        {
+          "type": "bloom",
+          "strength": 0.8
+        }
+      ],
+      "metadata": {
+        "sourcePrompt": "",
+        "generatedBy": "text2threejs",
+        "generatedAt": "",
+        "notes": []
+      }
+    }
+  },
+  "futuristic-hud": {
+    "prompt": "Create a futuristic UI/HUD scene with a holographic display, glowing wireframe elements, and a rotating central core.",
+    "provider": "mock",
+    "spec": {
+      "schemaVersion": "1.0",
+      "scene": {
+        "name": "Futuristic HUD",
+        "description": "A holographic display with glowing wireframe elements and a rotating core.",
+        "background": "#000510",
+        "fog": null,
+        "environment": null,
+        "units": "meters",
+        "up": "y"
+      },
+      "objects": [
+        {
+          "id": "core",
+          "name": "core",
+          "type": "sphere",
+          "parent": null,
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.5
+          },
+          "material": "mat_core",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "ring_outer",
+          "name": "ring_outer",
+          "type": "torus",
+          "parent": null,
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 1.2
+          },
+          "material": "mat_hologram",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "ring_inner",
+          "name": "ring_inner",
+          "type": "torus",
+          "parent": null,
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            1.5708,
+            0,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.8
+          },
+          "material": "mat_hologram",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "hud_panel",
+          "name": "hud_panel",
+          "type": "plane",
+          "parent": null,
+          "position": [
+            2,
+            1,
+            -1
+          ],
+          "rotation": [
+            0,
+            -0.5,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 1.5,
+            "height": 1
+          },
+          "material": "mat_panel",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "hud_panel_2",
+          "name": "hud_panel_2",
+          "type": "plane",
+          "parent": null,
+          "position": [
+            -2,
+            0.5,
+            -0.5
+          ],
+          "rotation": [
+            0,
+            0.5,
+            0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 1,
+            "height": 0.8
+          },
+          "material": "mat_panel",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat_core",
+          "shaderModel": "physical",
+          "color": "#00ccff",
+          "roughness": 0.1,
+          "metalness": 0.5,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#00ccff",
+          "emissiveIntensity": 2.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_hologram",
+          "shaderModel": "physical",
+          "color": "#00ff88",
+          "roughness": 0.2,
+          "metalness": 0.1,
+          "opacity": 0.6,
+          "transparent": true,
+          "emissive": "#00ff88",
+          "emissiveIntensity": 1.5,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_panel",
+          "shaderModel": "physical",
+          "color": "#001122",
+          "roughness": 0.3,
+          "metalness": 0.2,
+          "opacity": 0.7,
+          "transparent": true,
+          "emissive": "#00aaff",
+          "emissiveIntensity": 0.8,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        }
+      ],
+      "textures": [],
+      "lights": [
+        {
+          "id": "ambient",
+          "type": "ambient",
+          "color": "#001122",
+          "intensity": 0.5,
+          "position": [
+            0.0,
+            3.0,
+            0.0
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "core_light",
+          "type": "point",
+          "color": "#00ccff",
+          "intensity": 2.0,
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "target": null,
+          "distance": 6,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        }
+      ],
+      "camera": {
+        "type": "perspective",
+        "fov": 50,
+        "near": 0.1,
+        "far": 1000.0,
+        "position": [
+          0,
+          1,
+          8
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "orthoSize": 5.0,
+        "orthoLeft": -5.0,
+        "orthoRight": 5.0,
+        "orthoTop": 5.0,
+        "orthoBottom": -5.0
+      },
+      "environment": {
+        "background": "#000510",
+        "toneMapping": "aces",
+        "toneMappingExposure": 1.0,
+        "shadowMapEnabled": false
+      },
+      "animations": [
+        {
+          "id": "core_rotate",
+          "object": "core",
+          "property": "rotation.y",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 4.0,
+          "easing": "linear",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        },
+        {
+          "id": "ring_outer_spin",
+          "object": "ring_outer",
+          "property": "rotation.z",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 6.0,
+          "easing": "linear",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        },
+        {
+          "id": "ring_inner_spin",
+          "object": "ring_inner",
+          "property": "rotation.y",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 3.0,
+          "easing": "linear",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        },
+        {
+          "id": "panel_pulse",
+          "object": "hud_panel",
+          "property": "material.opacity",
+          "from": 0.4,
+          "to": 0.8,
+          "duration": 2.0,
+          "easing": "easeInOutSine",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": true
+        }
+      ],
+      "interactions": [],
+      "constraints": [],
+      "effects": [
+        {
+          "type": "bloom",
+          "strength": 1.5
+        },
+        {
+          "type": "scanlines"
+        }
+      ],
+      "metadata": {
+        "sourcePrompt": "",
+        "generatedBy": "text2threejs",
+        "generatedAt": "",
+        "notes": []
+      }
+    }
+  },
+  "luxury-product": {
+    "prompt": "Create a minimal luxury product advertisement for a perfume bottle. Use a clean studio background, soft lighting, and a slow camera orbit.",
+    "provider": "mock",
+    "spec": {
+      "schemaVersion": "1.0",
+      "scene": {
+        "name": "Luxury Perfume",
+        "description": "A minimal luxury perfume bottle with soft studio lighting.",
+        "background": "#f5f5f0",
+        "fog": null,
+        "environment": null,
+        "units": "meters",
+        "up": "y"
+      },
+      "objects": [
+        {
+          "id": "bottle_body",
+          "name": "bottle_body",
+          "type": "cylinder",
+          "parent": null,
+          "position": [
+            0,
+            0.8,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.5,
+            "height": 1.2
+          },
+          "material": "mat_glass",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "bottle_cap",
+          "name": "bottle_cap",
+          "type": "cylinder",
+          "parent": null,
+          "position": [
+            0,
+            1.6,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.2,
+            "height": 0.4
+          },
+          "material": "mat_gold",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "bottle_label",
+          "name": "bottle_label",
+          "type": "cylinder",
+          "parent": null,
+          "position": [
+            0,
+            0.8,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "radius": 0.52,
+            "height": 0.3
+          },
+          "material": "mat_label",
+          "visible": true,
+          "castShadow": false,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        },
+        {
+          "id": "table",
+          "name": "table",
+          "type": "box",
+          "parent": null,
+          "position": [
+            0,
+            -0.1,
+            0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "dimensions": {
+            "width": 6,
+            "height": 0.2,
+            "depth": 4
+          },
+          "material": "mat_table",
+          "visible": true,
+          "castShadow": true,
+          "receiveShadow": true,
+          "geometry": null,
+          "interactions": [],
+          "tags": []
+        }
+      ],
+      "materials": [
+        {
+          "id": "mat_glass",
+          "shaderModel": "physical",
+          "color": "#ddeeff",
+          "roughness": 0.05,
+          "metalness": 0.0,
+          "opacity": 0.3,
+          "transparent": true,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.9,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_gold",
+          "shaderModel": "physical",
+          "color": "#d4af37",
+          "roughness": 0.15,
+          "metalness": 1.0,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.5,
+          "clearcoatRoughness": 0.2,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_label",
+          "shaderModel": "physical",
+          "color": "#f5f5f0",
+          "roughness": 0.6,
+          "metalness": 0.0,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        },
+        {
+          "id": "mat_table",
+          "shaderModel": "physical",
+          "color": "#e8e4dc",
+          "roughness": 0.3,
+          "metalness": 0.1,
+          "opacity": 1.0,
+          "transparent": false,
+          "emissive": "#000000",
+          "emissiveIntensity": 0.0,
+          "doubleSided": false,
+          "wireframe": false,
+          "flatShading": false,
+          "texture": null,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.25,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "sheen": 0.0,
+          "iridescence": 0.0,
+          "anisotropy": 0.0,
+          "specularIntensity": 1.0,
+          "envMapIntensity": 0.8
+        }
+      ],
+      "textures": [],
+      "lights": [
+        {
+          "id": "soft_key",
+          "type": "directional",
+          "color": "#fff8f0",
+          "intensity": 1.5,
+          "position": [
+            3,
+            5,
+            4
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "fill",
+          "type": "directional",
+          "color": "#e8f0ff",
+          "intensity": 0.5,
+          "position": [
+            -3,
+            2,
+            3
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        },
+        {
+          "id": "rim",
+          "type": "directional",
+          "color": "#ffffff",
+          "intensity": 0.8,
+          "position": [
+            0,
+            3,
+            -4
+          ],
+          "target": null,
+          "distance": 0.0,
+          "decay": 2.0,
+          "angle": 0.5,
+          "penumbra": 0.0,
+          "castShadow": true,
+          "shadowMapSize": 1024,
+          "shadowBias": -0.0001,
+          "shadowNormalBias": 0.0,
+          "visible": true
+        }
+      ],
+      "camera": {
+        "type": "perspective",
+        "fov": 40,
+        "near": 0.1,
+        "far": 1000.0,
+        "position": [
+          0,
+          2,
+          8
+        ],
+        "target": [
+          0,
+          1,
+          0
+        ],
+        "orthoSize": 5.0,
+        "orthoLeft": -5.0,
+        "orthoRight": 5.0,
+        "orthoTop": 5.0,
+        "orthoBottom": -5.0
+      },
+      "environment": {
+        "background": "#f5f5f0",
+        "toneMapping": "aces",
+        "toneMappingExposure": 1.0,
+        "shadowMapEnabled": true,
+        "shadowMapType": "pcf-soft"
+      },
+      "animations": [
+        {
+          "id": "bottle_rotate",
+          "object": "bottle_body",
+          "property": "rotation.y",
+          "from": 0,
+          "to": 6.283185,
+          "duration": 10.0,
+          "easing": "linear",
+          "delay": 0.0,
+          "loop": true,
+          "yoyo": false
+        }
+      ],
+      "interactions": [],
+      "constraints": [],
+      "effects": [
+        {
+          "type": "bloom",
+          "strength": 0.3
+        }
+      ],
+      "metadata": {
+        "sourcePrompt": "",
+        "generatedBy": "text2threejs",
+        "generatedAt": "",
+        "notes": []
+      }
+    }
+  }
+}

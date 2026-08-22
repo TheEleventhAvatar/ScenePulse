@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 
+# Local secrets — API keys etc. Never commit.
+.env
+
 # macOS
 .DS_Store
 
