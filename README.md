@@ -1,6 +1,6 @@
-## Text → Three.js (new work)
+## ScenePulse (new work)
 
-`text2threejs/` is a **new, separate subsystem** built on top of https://github.com/img2threejs/img2threejs . It is *not* part of
+`ScenePulse` is a **new, separate subsystem** built on top of https://github.com/img2threejs/img2threejs . It is *not* part of
 the original image-to-3D pipeline — that pipeline (`forge/`, `grimoire/`, `integrations/`) is upstream
 work by the img2threejs authors and remains untouched. The Text-to-Three.js system turns a
 natural-language prompt into an interactive, animated Three.js scene through structured data only.
