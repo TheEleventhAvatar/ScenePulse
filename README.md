@@ -1,3 +1,26 @@
+## ScenePulse MockLLM Demo
+
+[![ScenePulse MockLLM demo on YouTube](https://img.youtube.com/vi/lu7u4j68jJM/0.jpg)](https://youtu.be/lu7u4j68jJM)
+
+Watch a live, end-to-end run of the mock-LLM pipeline — **no API key required**.
+The deterministic `MockLLM` provider ships five validated demo scenes, so the entire
+loop runs entirely in your browser: a natural-language prompt → `TextSceneSpec` JSON →
+interactive Three.js viewport → data-driven timeline → natural-language edits.
+
+▶ **[Watch the ScenePulse MockLLM demo on YouTube](https://youtu.be/lu7u4j68jJM)**
+
+Pick a demo or type a prompt (e.g. *“cinematic futuristic watch reveal”*) → **Generate**
+→ orbit, select, and transform objects with the gizmo, press **Play** to run the timeline,
+then patch the scene with edits like *“make the watch rotate 360 degrees”* or *“make the
+pedestal glossy black”*. Nothing a model generates is ever executed: the prompt becomes
+validated spec data, and the browser interprets it through deterministic Three.js builders.
+See the **[Run the demo](#run-the-demo)** section below, or reproduce any frame — the
+flagship scene is a watch on a reflective pedestal with key/rim/fill lighting, fog, ACES
+tone mapping, and hand-written GLSL (Fresnel rim glow, hologram scanlines, a dithered
+procedural gradient background).
+
+---
+
 ## ScenePulse (new work)
 
 `ScenePulse` is a **new, separate subsystem** built on top of https://github.com/img2threejs/img2threejs . It is *not* part of
