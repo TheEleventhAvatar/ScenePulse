@@ -1,11 +1,5 @@
 ## ScenePulse MockLLM Demo
 
-https://www.youtube.com/watch?v=lu7u4j68jJM
-
-Watch a live, end-to-end run of the mock-LLM pipeline — **no API key required**.
-
-Pick a demo or type a prompt (e.g. *“cinematic futuristic watch reveal”*) → **Generate**
-
 https://github.com/user-attachments/assets/68a4816f-9f6f-4406-a0c0-e4144c0d80bb
 
 
