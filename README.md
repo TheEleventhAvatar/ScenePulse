@@ -3,6 +3,11 @@
 https://github.com/user-attachments/assets/68a4816f-9f6f-4406-a0c0-e4144c0d80bb
 
 
+https://github.com/user-attachments/assets/ad4ba51d-f90a-4128-960a-6f429c99f2d6
+
+
+
+
 → orbit, select, and transform objects with the gizmo, press **Play** to run the timeline,
 then patch the scene with edits like *“make the watch rotate 360 degrees”* or *“make the
 pedestal glossy black”*. Nothing a model generates is ever executed: the prompt becomes
