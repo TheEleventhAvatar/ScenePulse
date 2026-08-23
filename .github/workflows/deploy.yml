@@ -1,0 +1,47 @@
+name: Deploy Text→Three.js frontend
+
+# Deploys the self-contained browser app in text2threejs/frontend/ to GitHub
+# Pages. The frontend is a static site (vendored Three.js r170, offline mock LLM)
+# with no build step, so it publishes directly from the source tree.
+# Live at: https://<owner>.github.io/<repo>/
+
+on:
+  push:
+    paths:
+      - "text2threejs/frontend/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Inspect frontend assets
+        run: |
+          ls -la text2threejs/frontend
+          echo "frontend asset count: $(find text2threejs/frontend -type f | wc -l)"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          publish_dir: text2threejs/frontend
+          publish_branch: gh-pages
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: text2threejs/frontend
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
