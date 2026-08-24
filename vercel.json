@@ -1,0 +1,5 @@
+{
+  "buildCommand": "python -m text2threejs.llm.export_demo_specs",
+  "outputDirectory": "text2threejs/frontend",
+  "cleanUrls": true
+}
