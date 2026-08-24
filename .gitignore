@@ -58,3 +58,4 @@ docs/research/
 # session, never inputs to a build, and they carry multi-megabyte PNGs. Tuning ships with the
 # stable release, not with a beta of the scripts.
 work/
+.vercel
